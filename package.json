@@ -1,0 +1,43 @@
+{
+	"name": "tbr-list",
+	"version": "0.1.0",
+	"description": "",
+	"main": "main.ts",
+	"homepage": "./",
+	"scripts": {
+		"start": "concurrently \"npm run start --prefix ./backend\" \"npm run start --prefix ./tbr\"",
+		"electron:start": "electron .",
+		"build": "react-scripts build",
+		"electron:build": "electron-builder",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder"
+	},
+	"build": {
+		"appId": "com.example.myApp",
+		"mac": {
+			"target": "dmg"
+		},
+		"win": {
+			"target": "nsis"
+		},
+		"files": [
+			"build/**/*",
+			"node_modules/**/*",
+			"main.ts",
+			"package.json"
+		],
+		"directories": {
+			"buildResources": "assets"
+		}
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"autoprefixer": "^10.4.14",
+		"bcryptjs": "^2.4.3",
+		"concurrently": "^8.0.1",
+		"craco": "^0.0.3",
+		"dotenv": "^16.0.3"
+	}
+}
